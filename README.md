@@ -39,23 +39,61 @@ Currently at this stage, only people with spectator camera access can create cus
 ## Example Script
 ```lua
 Log("This is a normal log message!") -- Logs a message to the console
-LogError("This is a error log message!") -- Logs a error to the console
-LogWarning("This is a warning log message!") -- Logs a warning to the console
+LogError("This is an error log message!") -- Logs an error to the console
+LogWarning("This is a warning log message!") -- Logs a warning log message to the console
 
--- Gets called every frame // game tick.
+-- Create a MonkeyObject from an existing GameObject
+local function CreateMonkeyObject(gameObject)
+    return MonkeyAPI:CreateMonkeyObject(gameObject)
+end
+
+-- Set the parent of a MonkeyObject
+local function SetParent(monkeyObject, newParent, worldPositionStays)
+    MonkeyAPI:SetParent(monkeyObject, newParent, worldPositionStays)
+end
+
+-- Set the active state of a MonkeyObject
+local function SetActive(monkeyObject, state)
+    MonkeyAPI:SetActive(monkeyObject, state)
+end
+
+-- Get the name of the MonkeyObject
+local function GetName(monkeyObject)
+    return MonkeyAPI:GetName(monkeyObject)
+end
+
+-- Move the MonkeyObject to a new position
+local function MovePosition(monkeyObject, position)
+    MonkeyAPI:MovePosition(monkeyObject, position)
+end
+
+-- Gets called every frame
 local function GameTick()
-    Log("GameTick is running!") -- Logs that the gametick is running!
+    Log("GameTick is running!")
 
-    local forestGameObject = GetObject("Forest")
-    if forestGameObject then
-        Log("Found forest gameObject!!")
+    local forestGameObject = GetObject("Forest") -- Get the Forest GameObject
+    local cove = GetObject("TheCove") -- Get the Cove GameObject
+    if forestGameObject ~= nil then
+        Log("Found forest GameObject!!")
 
-        forestGameObject:SetActive(false) -- Turns off the forest gameObject.
-        forestGameObject:MovePosition(Vector3(0, 0, 0)) -- Moves the forest's world position to 0, 0, 0
+        local pos = Vec3(0, 0, 0)
+        local rot = Quat(0, 0, 0, 1)
+        local scale = Vec3(1, 1, 1)
+
+        MonkeyAPI:SetActive(forestGameObject, true)
+        MonkeyAPI:SetPosition(forestGameObject, pos)
+        MonkeyAPI:CreatePrimitiveObject("Cube", pos, rot, scale)
+        MonkeyAPI:SetParent(forestGameObject, cove, true)
+    else
+        LogError("Couldn't find the Forest object!")
     end
 end
 
 -- Gets called when Monkey Bunch quits.
 local function OnAppQuit()
-    Log("OnAppQuit!") -- Logs that the game has quit!
+    Log("OnAppQuit!")
 end
+
+-- Register functions
+RegisterUpdateFunction(GameTick)
+RegisterQuitFunction(OnAppQuit)
