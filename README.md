@@ -6,3 +6,4 @@ Create a .lua file and open it in your IDE of choice, Make sure it is inside of 
 
 ## Functions
 **GameTick** - Similar to the unity **Update()** function, gets called every frame/game tick.
+**OnAppQuit** - Similar to the unity **OnApplicationQuit()** function, gets called whenever the game quits.
