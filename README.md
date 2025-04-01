@@ -9,3 +9,6 @@ Create a .lua file and open it in your IDE of choice, Make sure it is inside of 
 **GameTick** - Similar to the unity **Update()** function, gets called every frame/game tick.
 
 **OnAppQuit** - Similar to the unity **OnApplicationQuit()** function, gets called whenever the game quits.
+
+## Debugging
+To debug your plugin, you will need access to the Spectator Camera, if you do **not** have access to it, I dont know why your here. But, open the debugger window from the top bar in Spectator, and find all of the game's logs and your plugins logs in that window.
