@@ -23,7 +23,8 @@ To debug your plugin, you will need access to the Spectator Camera, if you do **
 ## Notice
 Currently at this stage, only people with spectator camera access can create custom plugins, but with the **Monkey Bunch Custom Maps SDK** you are able to code in that, but more limited and **very very very limited debugging tools for the custom maps sdk.**.
 
-
+## Example Script
+```lua
 Log("This is a normal log message!") -- Logs a message to the console
 LogError("This is a error log message!") -- Logs a error to the console
 LogWarning("This is a warning log message!") -- Logs a warning to the console
