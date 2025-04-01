@@ -22,3 +22,26 @@ To debug your plugin, you will need access to the Spectator Camera, if you do **
 
 ## Notice
 Currently at this stage, only people with spectator camera access can create custom plugins, but with the **Monkey Bunch Custom Maps SDK** you are able to code in that, but more limited and **very very very limited debugging tools for the custom maps sdk.**.
+
+
+Log("This is a normal log message!") -- Logs a message to the console
+LogError("This is a error log message!") -- Logs a error to the console
+LogWarning("This is a warning log message!") -- Logs a warning to the console
+
+-- Gets called every frame // game tick.
+local function GameTick()
+    Log("GameTick is running!") -- Logs that the gametick is running!
+
+    local forestGameObject = GetObject("Forest")
+    if forestGameObject then
+        Log("Found forest gameObject!!")
+
+        forestGameObject:SetActive(false) -- Turns off the forest gameObject.
+        forestGameObject:MovePosition(Vector3(0, 0, 0)) -- Moves the forest's world position to 0, 0, 0
+    end
+end
+
+-- Gets called when Monkey Bunch quits.
+local function OnAppQuit()
+    Log("OnAppQuit!") -- Logs that the game has quit!
+end
