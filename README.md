@@ -20,8 +20,11 @@ Create a .lua file and open it in your IDE of choice, Make sure it is inside of 
 **LogWarning** - Logs a warning to the console.
 
 ### Objects
-**CreateMonkeyObject** - Similar to creating a gameObject in unity, Paramaters: (**IN: (string : objectName)**, **OUT: (MonkeyObject : Result)**)
-**GetObject** - Similar to the GameObject.Find function in unity, Parmaters: (***)
+**CreateMonkeyObject** - Similar to creating a gameObject in unity, Paramaters: (**(string : objectName)**)
+
+**GetObject** - Similar to the GameObject.Find function in unity, Paramaters: (**(string : objectName)**)
+
+**SetParent** - Similar to the GameObject.SetParent function in unity, Paramaters: (**(MonkeyObject : object), (MonkeyObject : newParent), (bool : worldPositionStays)**)
 
 ## Debugging
 To debug your plugin, you will need access to the Spectator Camera, if you do **not** have access to it, I dont know why your here. But, open the debugger window from the top bar in Spectator, and find all of the game's logs and your plugins logs in that window.
