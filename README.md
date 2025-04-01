@@ -12,12 +12,16 @@ Create a .lua file and open it in your IDE of choice, Make sure it is inside of 
 
 ## Scripts
 
-#### Debuggging
+### Debugging
 **Log** - Logs a message to the console. (you can also use print)
 
 **LogError** - Logs a error to the console.
 
 **LogWarning** - Logs a warning to the console.
+
+### Objects
+**CreateMonkeyObject** - Similar to creating a gameObject in unity, Paramaters: (**IN: (string : objectName)**, **OUT: (MonkeyObject : Result)**)
+**GetObject** - Similar to the GameObject.Find function in unity, Parmaters: (***)
 
 ## Debugging
 To debug your plugin, you will need access to the Spectator Camera, if you do **not** have access to it, I dont know why your here. But, open the debugger window from the top bar in Spectator, and find all of the game's logs and your plugins logs in that window.
