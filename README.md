@@ -12,7 +12,9 @@ Create a .lua file and open it in your IDE of choice, Make sure it is inside of 
 
 ## Scripts
 **Log** - Logs a message to the console. (you can also use print)
+
 **LogError** - Logs a error to the console.
+
 **LogWarning** - Logs a warning to the console.
 
 ## Debugging
