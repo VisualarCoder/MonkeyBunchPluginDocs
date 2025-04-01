@@ -11,6 +11,8 @@ Create a .lua file and open it in your IDE of choice, Make sure it is inside of 
 **OnAppQuit** - Similar to the unity **OnApplicationQuit()** function, gets called whenever the game quits.
 
 ## Scripts
+
+#### Debuggging
 **Log** - Logs a message to the console. (you can also use print)
 
 **LogError** - Logs a error to the console.
